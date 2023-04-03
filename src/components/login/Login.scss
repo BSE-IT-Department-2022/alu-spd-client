@@ -1,0 +1,250 @@
+@mixin reusableProperties {
+  @media (min-width: 1024px) {
+    position: absolute;
+    right: -0;
+    top: 0;
+    border-bottom-left-radius: 100%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@mixin changeWidth($width) {
+  width: $width;
+  height: $width * 2;
+  transition: 2s;
+}
+
+.login-container {
+  position: relative;
+  color: white;
+  background: url("../../assets/imgs/sc3o0b4f.png");
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      180deg,
+      #f0eef2,
+      #8c9db9,
+      #d1283b
+    ); /* Change to desired color */
+    opacity: 0.3; /* Change to desired opacity */
+    z-index: -1;
+  }
+
+  .descriptionContainer {
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding: 10% 5%;
+    width: 50%;
+    color: white;
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    p {
+      width: 80%;
+      line-height: 30px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .loginDiv {
+    @include changeWidth(35%);
+    @include reusableProperties();
+    // background: var(--primary);
+    background: url("../../assets/imgs/029gwc2t_.png") center;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1%;
+    color: var(--primary);
+
+    h4 {
+      margin: 5% 0;
+      font-size: 1.3rem;
+    }
+
+    .loginDivContent {
+      img {
+        border-color: var(--icons);
+        max-width: 100%;
+        height: auto;
+      }
+      .loginButton {
+        padding: 2%;
+        border: none;
+        border-radius: 2px;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+        background-color: whitesmoke;
+        color: var(--primary);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .spareDiv {
+    @include changeWidth(45%);
+    @include reusableProperties();
+    background-color: #d00d2d; //var(--secondary);
+    z-index: 1;
+  }
+
+  .footerDiv {
+    @include changeWidth(45%);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    background-color: var(--primary);
+    // background: url("./assets/imgs/029gwc2t.png");
+    // background-image: linear-gradient(
+    //   180deg,
+    //   #8c9db9,
+    //   #ffffff
+    // ); /* Change to desired color */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    .footerContainer {
+      width: 100%;
+      display: grid;
+      color: white;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      align-content: center;
+      justify-items: center;
+      grid-template-areas:
+        ". main ."
+        "link link link";
+      margin-bottom: 2%;
+
+      h4 {
+        grid-area: main;
+        margin-bottom: 5%;
+      }
+
+      .footerLinkDiv {
+        display: inline-flex;
+        grid-area: 3;
+        a {
+          margin-left: 5px;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  @mixin changeWidth($width) {
+    height: $width * 2.1;
+  }
+  .login-container {
+    .loginDiv {
+      @include changeWidth(25%);
+    }
+
+    .spareDiv {
+      @include changeWidth(35%);
+    }
+
+    .footerDiv {
+      @include changeWidth(35%);
+
+      .footerContainer {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .login-container {
+    text-align: center;
+    p {
+      margin: unset;
+      width: 100% !important;
+    }
+    width: auto;
+    .descriptionContainer {
+      width: auto;
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    .loginDiv {
+      width: auto;
+      height: auto;
+      padding: 10%;
+      height: auto;
+    }
+
+    .spareDiv {
+      display: none;
+    }
+
+    .footerDiv {
+      border-top-left-radius: unset;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      position: unset;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .login-container {
+      width: auto;
+      .descriptionContainer {
+        width: auto;
+
+        p {
+          font-size: 1rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .loginDiv {
+        padding: 20% 0;
+
+        h4 {
+          font-size: 1.1rem;
+        }
+
+        .loginDivContent {
+          margin: 5% 0;
+        }
+      }
+
+      .footerDiv {
+        .footerContainer {
+          display: unset;
+          padding-top: 5%;
+
+          h4 {
+            font-size: 1.3rem;
+          }
+
+          .footerLinkDiv {
+            margin: 5% 0;
+          }
+        }
+      }
+    }
+  }
+}
