@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
-import App from "./App";
+import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
-import { store } from "./app/store";
 import { CookiesProvider } from "react-cookie";
 import "./index.css";
 
@@ -18,9 +16,7 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <CookiesProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </CookiesProvider>
   </React.StrictMode>
 );

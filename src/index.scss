@@ -1,0 +1,13 @@
+/**
+This file can be used to import global styles, fonts, or other assets.
+*/
+
+:root {
+  --primary: #196095 !important;
+  --secondary: #559bc9 !important;
+  --icons: lightgray;
+}
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
