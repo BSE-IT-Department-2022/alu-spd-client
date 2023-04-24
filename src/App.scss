@@ -1,28 +1,28 @@
-
-
 :root {
-    --primary: #002E6D !important;
-    --secondary: #F6F6F600 !important;
-    // --secondary: #D00D2D !important;
-    --icons: lightgray;
-  }
+  --primary: #002e6d !important;
+  --secondary: #f6f6f600 !important;
+  // --secondary: #D00D2D !important;
+  --icons: lightgray;
+}
 
-*, *::after, *::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-    user-select: none;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 /* Generic */
-body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-	// background-color: $neu-1;
-	// color: $gray;
-}
+// body{
+//     width: 100%;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-family: 'Montserrat', sans-serif;
+//     font-size: 12px;
+// 	// background-color: $neu-1;
+// 	// color: $gray;
+// }
