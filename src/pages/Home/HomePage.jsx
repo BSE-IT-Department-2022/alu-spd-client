@@ -1,6 +1,8 @@
 import React from "react";
 import useCurrentUser from "../../hooks/useCurrentUser";
 import Layout from "../../components/Layout/Layout";
+import CreateOpportunityForm from "../../components/Common/Opportunity/CreateOpportunity";
+import OpportunitiesTable from "../../components/Common/Opportunity/OpportunitesTable";
 
 function HomePage() {
   const { currentUser, loading } = useCurrentUser();
@@ -15,13 +17,8 @@ function HomePage() {
 
   return (
     <Layout user={currentUser}>
-      <h1>Weclome {currentUser.firstName}</h1>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-        aspernatur quam, placeat pariatur exercitationem consequatur tempore
-        reiciendis similique facilis fuga, tenetur alias accusamus voluptate,
-        facere error adipisci quibusdam laboriosam accusantium.
-      </h1>
+      <OpportunitiesTable currentUser={currentUser} />
+      <CreateOpportunityForm currentUser={currentUser} />
     </Layout>
   );
 }

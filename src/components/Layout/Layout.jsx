@@ -15,7 +15,7 @@ function Layout({ user, ...props }) {
       <Header onToggleSidebar={handleToggleSidebar} />
       <div className="h-screen pt-12 mt-12 lg:flex lg:flex-row">
         <Sidebar isOpen={isSidebarOpen} user={user}></Sidebar>
-        <main className="px-8 pt-8 w-full lg:mx-8 lg:w-5/6">
+        <main className="px-8 pt-4 w-full lg:mx-8 lg:w-5/6">
           {props.children}
         </main>
       </div>
