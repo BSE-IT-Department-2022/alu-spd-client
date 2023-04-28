@@ -17,12 +17,12 @@ const apiClientWithCredentials = axios.create({
   withCredentials: true,
 });
 
-export const login = async (email, password) => {
+export const login = async (data) => {
   try {
-    const response = await apiClient.post("/login", {
-      email,
-      password,
+    const response = await apiClient.post("/users/login", {
+      data,
     });
+
     return response.data;
   } catch (error) {
     throw error;
@@ -45,12 +45,13 @@ export const getMe = async () => {
   }
 };
 
-export const register = async (email, password) => {
+export const register = async (data) => {
+  console.log(data);
   try {
-    const response = await apiClient.post("/register", {
-      email,
-      password,
+    const response = await apiClient.post("/users/register", {
+      data,
     });
+    console.log(response);
     return response.data;
   } catch (error) {
     throw error;

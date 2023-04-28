@@ -24,6 +24,9 @@ function App() {
         <Route path="/" element={<ProtectedRoute />}>
           <Route index element={<HomePage />} />
         </Route>
+        <Route path="/oppotopt" element={<ProtectedRoute />}>
+          <Route index element={<HomePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
