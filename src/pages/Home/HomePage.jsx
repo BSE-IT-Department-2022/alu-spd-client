@@ -3,12 +3,13 @@ import useCurrentUser from "../../hooks/useCurrentUser";
 import Layout from "../../components/Layout/Layout";
 import CreateOpportunityForm from "../../components/Common/Opportunity/CreateOpportunity";
 import OpportunitiesTable from "../../components/Common/Opportunity/OpportunitesTable";
+import Spinner from "../../components/Spinner";
 
 function HomePage() {
   const { currentUser, loading } = useCurrentUser();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   if (!currentUser) {
