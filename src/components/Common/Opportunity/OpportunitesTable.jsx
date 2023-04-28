@@ -1,13 +1,13 @@
 const OpportunitiesTable = ({ currentUser }) => {
   // Define onChange function
-  const handleChange = (event) => {
-    // Handle changes to form input fields
-  };
+  // const handleChange = (event) => {
+  //   // Handle changes to form input fields
+  // };
 
-  // Define onSubmit function
-  const handleSubmit = (event) => {
-    // Handle form submission
-  };
+  // // Define onSubmit function
+  // const handleSubmit = (event) => {
+  //   // Handle form submission
+  // };
   const opportunities = [
     {
       _id: "1",
